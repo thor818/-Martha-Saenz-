@@ -155,6 +155,10 @@
   .facts strong { display: block; color: var(--sand); font-weight: 500; }
   .breton-quote { font: italic 400 clamp(26px, 3.6vw, 40px)/1.3 var(--serif); }
 
+  .featured img { width: 100%; box-shadow: 0 30px 80px rgba(0,0,0,.55); cursor: zoom-in; }
+  .featured .words { list-style: none; display: grid; gap: 10px; margin: 26px 0; font: italic 400 22px/1.35 var(--serif); }
+  .featured .words li::before { content: "— "; color: var(--terracotta); }
+
   /* Ensayo */
   .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 20px; }
   .pillar { border-top: 2px solid var(--terracotta); padding-top: 20px; }
@@ -359,6 +363,7 @@
     <h3 class="reveal" style="margin:72px 0 24px">Galería</h3>
     <!-- Añadir títulos: data-caption="Título · técnica · año" -->
     <div class="art-grid">
+      <img src="img/esta-soy-yo.jpg" alt="«Esta soy yo», 2025" data-caption="«Esta soy yo» · 2025" loading="lazy">
       <img src="img/obra-01.jpg" alt="Mujer sostiene un corazón con un ojo entre nubes rosas, mariposas y un ajolote" loading="lazy">
       <img src="img/obra-02.jpg" alt="Cielo de ojos sobre un teatro con cortinas verdes y una figura que flota" loading="lazy">
       <img src="img/obra-03.jpg" alt="Corazón con un ojo sostenido por manos, con mariposas monarca y un quetzal" loading="lazy">
@@ -372,6 +377,25 @@
       <img src="img/obra-11.jpg" alt="Ojo amarillo rodeado de un plumaje rojo y anaranjado" loading="lazy">
       <img src="img/escultura-01.jpg" alt="Escultura de un ajolote" loading="lazy" data-caption="Escultura">
       <img src="img/escultura-02.jpg" alt="Escultura en bronce de un corazón con un ojo y ramas" loading="lazy" data-caption="Escultura en bronce">
+    </div>
+  </div>
+</section>
+
+<section id="esta-soy-yo">
+  <div class="wrap two-col featured reveal">
+    <figure>
+      <img src="img/esta-soy-yo.jpg" alt="«Esta soy yo», obra de Martha Sáenz: figura de espaldas con alas doradas sobre nubes de colores, flores blancas y frases escritas a mano sobre fondo negro">
+    </figure>
+    <div>
+      <div class="eyebrow">Obra reciente · 2025</div>
+      <h2>«Esta soy yo»</h2>
+      <p>Una obra-diario: Martha escribió sobre el lienzo, a mano y en colores, lo que sentía mientras la pintaba. Es la pieza 1 de 2.</p>
+      <ul class="words">
+        <li>Me llamo Martha y vine a amar y a compartir, no a pelear.</li>
+        <li>Pinto como me da la gana, les guste o no, porque soy yo para compartir.</li>
+        <li>Hoy, 10 de julio de 2025, terminé esta obra y la firmo como quiero.</li>
+      </ul>
+      <blockquote style="margin:0">«Hace meses empecé a pintar esta obra sin ganas, sin sentirme creativa, iba poniendo lo que iba…»<cite>Martha Sáenz, en Instagram</cite></blockquote>
     </div>
   </div>
 </section>
