@@ -164,6 +164,18 @@
   .featured .words { list-style: none; display: grid; gap: 10px; margin: 26px 0; font: italic 400 22px/1.35 var(--serif); }
   .featured .words li::before { content: "— "; color: var(--terracotta); }
 
+  .stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+  .story .pics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+  .story .pics.one { grid-template-columns: 1fr; }
+  .story .pics img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 1px solid var(--line); }
+  .story .pics.one img { aspect-ratio: 4/3; }
+  .story .meta { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .story p { color: var(--sand-dim); font-size: 15.5px; margin-top: 8px; }
+  .press-feature { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: center; margin-bottom: 36px;
+                   padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+  .press-feature img { width: 100%; border: 1px solid var(--line); }
+  @media (max-width: 600px) { .press-feature { grid-template-columns: 1fr; } }
+
   /* Ensayo */
   .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 20px; }
   .pillar { border-top: 2px solid var(--terracotta); padding-top: 20px; }
@@ -196,6 +208,7 @@
     <li><a href="#trayectoria">Trayectoria</a></li>
     <li><a href="#papa-francisco">Papa Francisco</a></li>
     <li><a href="#obra">Obra</a></li>
+    <li><a href="#historias">Historias</a></li>
     <li><a href="#surrealismo">Surrealismo</a></li>
     <li><a href="#prensa">Prensa</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -236,6 +249,8 @@
     <li>Bienal de Venecia</li>
     <li>Expo Dubái</li>
     <li>Times Square, Nueva York</li>
+    <li>Naciones Unidas, Nueva York</li>
+    <li>Burj Khalifa, Dubái</li>
     <li>Senado de la República</li>
     <li>Museo Leonora Carrington</li>
     <li>Palacio de Gobierno de Jalisco</li>
@@ -281,6 +296,7 @@
       <h2>Una vida que se volvió lienzo</h2>
       <p>Martha Sáenz nació en Sonora, México, en 1975, y es originaria de Hermosillo. Descubrió la pintura de niña, mirando pintar a su madre; en gran parte autodidacta, tomó también clases con el artista Rubén Belloso. En la última década hizo de la pintura su profesión y, en sus propias palabras, su obsesión.</p>
       <p>Su obra es autorreferencial: los paisajes desérticos de su tierra, los cactus que para ella son fuente de energía y los recuerdos de sus viajes, como el que hizo con sus hijos al desierto del Sahara, se convierten en símbolos y colores. Trabaja sobre todo con pastel y técnica mixta, y ha extendido su lenguaje a la escultura en bronce y al arte digital.</p>
+      <p>Fue en un taller en Sevilla, España, donde descubrió lo que quería desde niña: «¡Pude pintar lo que tenía en mi cabeza, desde ese momento no he dejado de hacerlo!». Hoy vive con su familia en Madrid. Entre sus obras más queridas está «Plenitud del alma», donde plasmó una experiencia que jamás pudo expresar con palabras.</p>
       <p>La crítica la ha llamado <em>«heredera del surrealismo»</em>, en la estela de Leonora Carrington, Remedios Varo, Giorgio de Chirico y Salvador Dalí.</p>
     </div>
     <div class="portrait"><img src="img/martha-retrato.jpg" alt="Retrato en blanco y negro de Martha Sáenz" loading="lazy"></div>
@@ -296,6 +312,16 @@
         <div class="year">2019 · Vaticano, Roma</div>
         <h3>Pintando con el Papa Francisco</h3>
         <p>En un encuentro de Scholas Occurrentes, la fundación educativa del Papa, Martha pinta junto al Papa Francisco una obra a cuatro manos.</p>
+      </li>
+      <li>
+        <div class="year">2020 · Tijuana – San Diego</div>
+        <h3>«Esto también pasará», en el muro fronterizo</h3>
+        <p>Pinta un corazón con un ojo sobre el muro que divide México y Estados Unidos; meses después lo lleva al lienzo en Madrid.</p>
+      </li>
+      <li>
+        <div class="year">Exposiciones colectivas</div>
+        <h3>Naciones Unidas, Vaticano, Miami y Madrid</h3>
+        <p>Participa en exposiciones colectivas en las Naciones Unidas en Nueva York y en el Vaticano, y su obra está presente en galerías de Miami y Madrid.</p>
       </li>
       <li>
         <div class="year">2021 · Ciudad de México</div>
@@ -345,16 +371,21 @@
 <section id="papa-francisco">
   <div class="wrap two-col featured reveal">
     <figure>
-      <img src="img/papa-francisco.jpg" alt="Martha Sáenz estrecha la mano del Papa Francisco frente a un mural de colores">
-      <img src="img/papa-pintando.jpg" alt="El Papa Francisco toma pintura de una paleta con un pincel, en el Vaticano" style="margin-top:20px">
-      <figcaption style="margin-top:10px;font-size:13px;color:var(--sand-dim)">El Papa Francisco pinta en el encuentro de Scholas Occurrentes. Vaticano, 2019.</figcaption>
+      <img src="img/papa-abrazo.jpg" alt="El Papa Francisco abraza a Martha Sáenz frente a un mural de colores en el Vaticano">
+      <figcaption style="margin-top:10px;font-size:13px;color:var(--sand-dim)">Un abrazo del Papa Francisco. Vaticano, marzo de 2019.</figcaption>
     </figure>
     <div>
       <div class="eyebrow">Vaticano, Roma · 2019</div>
       <h2>Con el Papa Francisco</h2>
-      <p>En marzo de 2019, en el Vaticano, Martha Sáenz conoció al Papa Francisco en un encuentro de Scholas Occurrentes, la fundación educativa creada por el Papa. Allí pintó junto a él una obra a cuatro manos: el Papa tomó el pincel de la paleta y el arte se convirtió en un puente de encuentro.</p>
-      <blockquote style="margin:28px 0 0">«¡Qué honor!… ¡Gracias!»<cite>Martha Sáenz · Instagram, 25 de marzo de 2019 · #pintandopuentes #amarescompartir</cite></blockquote>
+      <p>En marzo de 2019, en el Vaticano, Martha Sáenz conoció al Papa Francisco en un encuentro de Scholas Occurrentes, la fundación educativa creada por el Papa. Allí pintó junto a él una obra a cuatro manos: el Papa tomó el pincel de la paleta y el arte se convirtió en un puente de encuentro. Martha ha trabajado con la fundación del Papa y ha donado obras a subastas benéficas.</p>
+      <blockquote style="margin:28px 0 0">«Me gusta pensar que todos tenemos un lado filántropo que se preocupa por el mundo y, por eso, he donado algunas piezas a diferentes subastas, entre ellas he trabajado con la fundación del Papa Francisco, lo cual es un honor para mí.»<cite>Martha Sáenz · Revista Caras, octubre de 2021</cite></blockquote>
+      <p style="margin-top:24px;color:var(--sand-dim);font-size:15px">«¡Qué honor!… ¡Gracias!» #pintandopuentes · «Recuerdo de un día increíble…» · #abrazosllenosdeamor — Martha, en Instagram</p>
     </div>
+  </div>
+  <div class="wrap breton-photos reveal">
+    <figure><img src="img/papa-francisco.jpg" alt="Martha Sáenz estrecha la mano del Papa Francisco" loading="lazy"><figcaption>El saludo</figcaption></figure>
+    <figure><img src="img/papa-pintando.jpg" alt="El Papa Francisco toma pintura de una paleta con un pincel" loading="lazy"><figcaption>El Papa toma el pincel · 25 de marzo de 2019</figcaption></figure>
+    <figure><img src="img/papa-paleta-2022.jpg" alt="El Papa Francisco pinta con una paleta junto a Martha Sáenz" loading="lazy"><figcaption>Pintando juntos · «Recuerdo de un día increíble»</figcaption></figure>
   </div>
 </section>
 
@@ -412,8 +443,40 @@
       <img src="img/obra-11.jpg" alt="Ojo amarillo rodeado de un plumaje rojo y anaranjado" loading="lazy">
       <img src="img/obra-12.jpg" alt="Retrato de un hombre de cabello cano con un halo dorado y un corazón rojo en el pecho, en marco dorado" loading="lazy">
       <img src="img/obra-13.jpg" alt="Rostro de mujer abierto como una taza, con un ojo azul, una escalera hacia una nube y un tornado rosa" loading="lazy">
+      <img src="img/esto-tambien-pasara.jpg" alt="«Esto también pasará», 2020" data-caption="«Esto también pasará» · pastel, 100 × 70 cm · 2020" loading="lazy">
+      <img src="img/saboreando-el-mundo.jpg" alt="«Saboreando el mundo», 2020" data-caption="«Saboreando el mundo» · pastel sobre papel · 2020" loading="lazy">
+      <img src="img/conejo-2024.jpg" alt="«Haciendo visible lo invisible», 2024" data-caption="«Haciendo visible lo invisible» · pastel · 2024" loading="lazy">
       <img src="img/escultura-01.jpg" alt="Escultura de un ajolote" loading="lazy" data-caption="Escultura">
       <img src="img/escultura-02.jpg" alt="Escultura en bronce de un corazón con un ojo y ramas" loading="lazy" data-caption="Escultura en bronce">
+    </div>
+  </div>
+</section>
+
+<section id="historias">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Obras con historia</div>
+      <h2>Cada cuadro, un viaje</h2>
+    </div>
+    <div class="stories">
+      <article class="story reveal">
+        <div class="pics"><img src="img/esto-tambien-pasara.jpg" alt="«Esto también pasará»: corazón rojo con un ojo sobre fondo turquesa" loading="lazy"><img src="img/esto-tambien-pasara-burj.jpg" alt="«Esto también pasará» enmarcada en el Burj Khalifa de Dubái" loading="lazy"></div>
+        <div class="meta">Pastel · 100 × 70 cm · 2020</div>
+        <h3>«Esto también pasará»</h3>
+        <p>Martha la pintó primero en marzo de 2020 sobre el muro fronterizo que divide Tijuana y San Diego, y después la llevó a un lienzo en su casa de Madrid. En 2022 la obra viajó al Burj Khalifa, en Dubái.</p>
+      </article>
+      <article class="story reveal">
+        <div class="pics"><img src="img/saboreando-el-mundo.jpg" alt="«Saboreando el mundo»: boca que muerde una paleta con forma de planeta Tierra" loading="lazy"><img src="img/saboreando-expo-dubai.jpg" alt="«Saboreando el mundo» expuesta en el Pabellón de Colombia de la Expo Dubái" loading="lazy"></div>
+        <div class="meta">Pastel sobre papel · 2020</div>
+        <h3>«Saboreando el mundo»</h3>
+        <p>«Todo es posible cuando uso mi imaginación… Voy a seguir saboreando el mundo.» Una versión de la obra se expuso en el Pabellón de Colombia de la Expo Dubái en 2022.</p>
+      </article>
+      <article class="story reveal">
+        <div class="pics one"><img src="img/conejo-2024.jpg" alt="Conejo blanco en una ventana nocturna, rodeado de corazones azules y un ojo, pastel de 2024" loading="lazy"></div>
+        <div class="meta">Pastel · enero de 2024</div>
+        <h3>«Haciendo visible lo invisible»</h3>
+        <p>«No juzguemos, mejor ayudemos.» Una obra de su serie de surrealismo con causa.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -492,6 +555,14 @@
   <div class="wrap reveal">
     <div class="eyebrow">Prensa</div>
     <h2>Lo que se ha dicho</h2>
+    <div class="press-feature">
+      <a href="img/caras-2021.jpg" target="_blank" rel="noopener"><img src="img/caras-2021.jpg" alt="Página de la revista Caras México, octubre de 2021, con obras de Martha Sáenz" loading="lazy"></a>
+      <div>
+        <div class="eyebrow">Revista Caras México · Octubre 2021</div>
+        <h3 style="margin-top:8px">«Martha Sáenz plasma sus vivencias en la pintura surrealista»</h3>
+        <p style="color:var(--sand-dim);font-size:15.5px">Su infancia en Sonora observando pintar a su madre, el taller en Sevilla, su vida en Madrid y sus exposiciones en las Naciones Unidas, el Vaticano, Miami y Madrid.</p>
+      </div>
+    </div>
     <ul class="press">
       <li><a href="https://ciscm.fr/en/surrealisme-mexique-miroirs-magnetiques/" target="_blank" rel="noopener">«Surréalisme &amp; Mexique – Miroirs magnétiques», Saint-Cirq-Lapopie 2026 <span class="src">CISCM · Francia</span></a></li>
       <li><a href="https://comunicacionsocial.senado.gob.mx/informacion/comunicados/452-visiones-martha-saenz" target="_blank" rel="noopener">«Visiones. Martha Sáenz», comunicado oficial <span class="src">Senado de la República</span></a></li>
