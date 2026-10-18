@@ -160,7 +160,10 @@
   @media (max-width: 700px) { .breton-photos { grid-template-columns: 1fr; } }
   .sala { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 64px; }
   .sala figure { margin: 0; }
-  .sala img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid var(--line); cursor: zoom-in; }
+  .sala img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid var(--line); }
+  .sala .lead { grid-column: 1 / -1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center; }
+  .sala .lead figcaption { font: italic 400 clamp(20px, 2.2vw, 26px)/1.4 var(--serif); color: var(--sand); }
+  @media (max-width: 700px) { .sala .lead { grid-template-columns: 1fr; } }
   .sala-caption { grid-column: 1 / -1; color: var(--sand-dim); font-size: 15px; }
   @media (max-width: 700px) { .sala { grid-template-columns: 1fr; } }
   .breton-quote { font: italic 400 clamp(26px, 3.6vw, 40px)/1.3 var(--serif); }
@@ -289,6 +292,7 @@
     </div>
   </div>
   <div class="wrap sala reveal">
+    <figure class="lead"><img src="img/breton-anne-foucault.jpg" alt="Martha Sáenz junto a Anne Foucault frente a tres de sus obras en la exposición" loading="lazy"><figcaption>Martha Sáenz con Anne Foucault, historiadora del arte especialista en surrealismo, investigadora del Centre Pompidou de París y parte del equipo científico de la exposición.</figcaption></figure>
     <figure><img src="img/breton-sala-2.jpg" alt="Tres obras de Martha Sáenz colgadas en la sala de la exposición, entre ellas «Esta soy yo», con visitantes" loading="lazy"></figure>
     <figure><img src="img/breton-sala-1.jpg" alt="Visitantes frente a las obras de Martha Sáenz en la exposición" loading="lazy"></figure>
     <p class="sala-caption">Las obras de Martha Sáenz en la sala de la exposición, entre ellas «Esta soy yo». Recibieron la visita de Federica Matta, artista e hija del pintor surrealista Roberto Matta, y de Fermín Llamazares, presidente del Consejo Leonora Carrington.</p>
