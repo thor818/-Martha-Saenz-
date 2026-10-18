@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Martha Sáenz · Artista surrealista mexicana</title>
+<meta name="description" content="Martha Sáenz, pintora surrealista originaria de Sonora, México. Biografía, obra, exposiciones y prensa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #14101c;
+    --night-2: #1e1829;
+    --sand: #f3e7d3;
+    --sand-dim: #cbbda6;
+    --terracotta: #c8603a;
+    --gold: #d9a441;
+    --cactus: #5f8a5b;
+    --line: rgba(243, 231, 211, .14);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--night); color: var(--sand); font: 300 17px/1.7 var(--sans); overflow-x: hidden; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Navegación */
+  nav { position: fixed; inset: 0 0 auto; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+        padding: 18px clamp(16px, 5vw, 64px); background: linear-gradient(var(--night), transparent); }
+  nav .logo { font: 600 22px var(--serif); color: var(--sand); letter-spacing: .04em; }
+  nav ul { display: flex; gap: 28px; list-style: none; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+  nav ul a { color: var(--sand-dim); }
+  nav ul a:hover { color: var(--gold); text-decoration: none; }
+  @media (max-width: 760px) { nav ul { display: none; } }
+
+  /* Portada */
+  .hero { min-height: 100vh; display: grid; place-items: center; text-align: center; position: relative; overflow: hidden;
+          padding: 120px 16px 80px; }
+  .hero .sky { position: absolute; inset: 0; background:
+      radial-gradient(circle at 50% 38%, rgba(217,164,65,.35) 0 9%, transparent 9.5%),
+      radial-gradient(ellipse at 50% 100%, rgba(200,96,58,.55), transparent 60%),
+      linear-gradient(180deg, #14101c 0%, #2a1b33 55%, #6b2f2a 100%); }
+  .hero svg.desert { position: absolute; bottom: 0; left: 0; width: 100%; height: 38%; }
+  .hero .content { position: relative; max-width: 820px; }
+  .eyebrow { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+  .hero h1 { font: 400 clamp(56px, 11vw, 132px)/0.95 var(--serif); margin: 18px 0 22px; }
+  .hero h1 em { color: var(--terracotta); }
+  .hero p.lead { font: italic 400 clamp(20px, 2.6vw, 26px)/1.4 var(--serif); color: var(--sand-dim); }
+  .hero .btn { display: inline-block; margin-top: 36px; padding: 13px 30px; border: 1px solid var(--gold); color: var(--sand);
+               font-size: 13px; letter-spacing: .18em; text-transform: uppercase; }
+  .hero .btn:hover { background: var(--gold); color: var(--night); text-decoration: none; }
+
+  /* Secciones */
+  section { padding: clamp(72px, 10vw, 128px) clamp(16px, 6vw, 80px); }
+  section:nth-of-type(even) { background: var(--night-2); }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  h2 { font: 400 clamp(38px, 6vw, 64px)/1.05 var(--serif); margin: 10px 0 34px; }
+  h3 { font: 600 26px/1.2 var(--serif); margin-bottom: 8px; }
+  p + p { margin-top: 1em; }
+  blockquote { font: italic 400 clamp(24px, 3.4vw, 34px)/1.35 var(--serif); color: var(--sand); border-left: 2px solid var(--terracotta);
+               padding-left: 24px; margin: 40px 0; }
+  blockquote cite { display: block; margin-top: 12px; font: 400 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--sand-dim); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  @media (max-width: 820px) { .two-col { grid-template-columns: 1fr; } }
+
+  .portrait { aspect-ratio: 4/5; background: linear-gradient(160deg, #3a2640, #6b2f2a); border: 1px solid var(--line);
+              display: grid; place-items: center; color: var(--sand-dim); font-size: 14px; text-align: center; padding: 24px; }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Línea de tiempo */
+  .timeline { list-style: none; border-left: 1px solid var(--line); margin-left: 8px; }
+  .timeline li { position: relative; padding: 0 0 40px 34px; }
+  .timeline li::before { content: ""; position: absolute; left: -6px; top: 8px; width: 11px; height: 11px; border-radius: 50%;
+                         background: var(--terracotta); box-shadow: 0 0 0 4px var(--night-2); }
+  .timeline .year { font: 600 15px var(--sans); letter-spacing: .14em; color: var(--gold); }
+  .timeline p { color: var(--sand-dim); }
+
+  /* Obra */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 28px; }
+  .work { background: var(--night-2); border: 1px solid var(--line); }
+  .work .frame { aspect-ratio: 4/5; display: grid; place-items: center; overflow: hidden; }
+  .work .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .work .info { padding: 20px 22px 24px; }
+  .work .meta { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .work p { color: var(--sand-dim); font-size: 15px; margin-top: 8px; }
+  .f1 { background: radial-gradient(circle at 30% 30%, var(--gold), transparent 35%), linear-gradient(135deg, #6b2f2a, #2a1b33); }
+  .f2 { background: radial-gradient(circle at 70% 60%, var(--cactus), transparent 40%), linear-gradient(200deg, #c8603a, #3a2640); }
+  .f3 { background: conic-gradient(from 90deg at 50% 50%, #2a1b33, #c8603a, #d9a441, #5f8a5b, #2a1b33); }
+  .f4 { background: radial-gradient(circle at 50% 50%, #7c5cc4, transparent 45%), linear-gradient(160deg, #14101c, #3a2640); }
+
+  /* Ensayo */
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 20px; }
+  .pillar { border-top: 2px solid var(--terracotta); padding-top: 20px; }
+  .pillar p { color: var(--sand-dim); font-size: 15.5px; }
+
+  /* Prensa */
+  .press { list-style: none; display: grid; gap: 2px; }
+  .press a { display: flex; justify-content: space-between; gap: 20px; padding: 20px 4px; border-bottom: 1px solid var(--line); color: var(--sand); }
+  .press a:hover { color: var(--gold); text-decoration: none; }
+  .press span.src { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+
+  footer { padding: 72px 16px; text-align: center; border-top: 1px solid var(--line); }
+  footer .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 28px; margin: 22px 0; font-size: 14px;
+                  letter-spacing: .14em; text-transform: uppercase; }
+  footer small { color: var(--sand-dim); font-size: 13px; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#inicio">Martha Sáenz</a>
+  <ul>
+    <li><a href="#biografia">Biografía</a></li>
+    <li><a href="#trayectoria">Trayectoria</a></li>
+    <li><a href="#obra">Obra</a></li>
+    <li><a href="#surrealismo">Surrealismo</a></li>
+    <li><a href="#prensa">Prensa</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="sky"></div>
+  <svg class="desert" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 260 C 240 190, 420 300, 720 230 S 1200 180, 1440 250 L1440 400 L0 400 Z" fill="#2a1622"/>
+    <path d="M0 320 C 300 270, 600 350, 900 300 S 1300 290, 1440 320 L1440 400 L0 400 Z" fill="#14101c"/>
+    <g fill="#14101c">
+      <path d="M220 330 v-120 a16 16 0 0 1 32 0 v120 Z"/><path d="M190 280 v-40 a12 12 0 0 1 24 0 v52 h-24 Z"/>
+      <path d="M252 260 h20 v-50 a12 12 0 0 1 24 0 v62 a12 12 0 0 1 -12 12 h-32 Z"/>
+      <path d="M1180 320 v-90 a13 13 0 0 1 26 0 v90 Z"/><path d="M1206 270 h14 v-34 a10 10 0 0 1 20 0 v44 a10 10 0 0 1 -10 10 h-24 Z"/>
+    </g>
+  </svg>
+  <div class="content">
+    <div class="eyebrow">Sonora, México · Artista surrealista</div>
+    <h1>Martha <em>Sáenz</em></h1>
+    <p class="lead">«En verdad mi vida es surrealista, la gente que me conoce lo sabe.»</p>
+    <a class="btn" href="#obra">Ver su obra</a>
+  </div>
+</header>
+
+<main>
+
+<section id="biografia">
+  <div class="wrap two-col reveal">
+    <div>
+      <div class="eyebrow">Biografía</div>
+      <h2>Una vida que se volvió lienzo</h2>
+      <p>Martha Sáenz nació en Sonora, México. Descubrió la pintura de niña, mirando pintar a su madre, y más tarde tomó clases con el artista Rubén Belloso. En la última década hizo de la pintura su profesión y, en sus propias palabras, su obsesión.</p>
+      <p>Su obra es autorreferencial: los paisajes desérticos de su tierra, los cactus que para ella son fuente de energía y los recuerdos de sus viajes, como el que hizo con sus hijos al desierto del Sahara, se convierten en símbolos y colores. Trabaja sobre todo con pastel y técnica mixta, y ha extendido su lenguaje a la escultura en bronce y al arte digital.</p>
+      <p>La crítica la ha llamado <em>«heredera del surrealismo»</em>, en la estela de Leonora Carrington, Remedios Varo, Giorgio de Chirico y Salvador Dalí.</p>
+    </div>
+    <!-- Sustituir por una foto de la artista: <img src="img/martha.jpg" alt="Martha Sáenz en su estudio"> -->
+    <div class="portrait">Fotografía de la artista<br>(colocar en <code>img/martha.jpg</code>)</div>
+  </div>
+</section>
+
+<section id="trayectoria">
+  <div class="wrap reveal">
+    <div class="eyebrow">Trayectoria</div>
+    <h2>Del desierto de Sonora al mundo</h2>
+    <ul class="timeline">
+      <li>
+        <div class="year">2021 · Ciudad de México</div>
+        <h3>«Visiones», primera muestra individual</h3>
+        <p>Inaugurada el 18 de agosto en la Casa Nuestra del Senado de la República, con 18 obras y la curaduría de Raymundo Silva. Estaba prevista para marzo de 2020 y se pospuso por la pandemia.</p>
+      </li>
+      <li>
+        <div class="year">2022 · Dubái</div>
+        <h3>Expo Dubái, Pabellón de Colombia</h3>
+        <p>La serie «Visiones» viaja a la Exposición Universal y se presenta en el Pabellón de Colombia.</p>
+      </li>
+      <li>
+        <div class="year">2022 · Nueva York</div>
+        <h3>«Multiverse» en Times Square</h3>
+        <p>Su obra NFT «Multiverse» se proyecta en las pantallas de Times Square en el marco de los NFT Awards.</p>
+      </li>
+      <li>
+        <div class="year">2022 · Venecia</div>
+        <h3>Homenaje a Leonora Carrington, cierre de la 59.ª Bienal</h3>
+        <p>Invitada especial en la exposición paralela al cierre de la Bienal «Il latte dei sogni», con las obras «Sin límites» y «Bendita coherencia».</p>
+      </li>
+      <li>
+        <div class="year">2023 · San Luis Potosí</div>
+        <h3>«Sin límites», Museo Leonora Carrington</h3>
+        <p>Más de 20 obras de pastel, técnica mixta, sus primeras esculturas en bronce y piezas digitales, en el marco del 15.º aniversario del Centro de las Artes de San Luis Potosí.</p>
+      </li>
+      <!-- Añadir aquí exposiciones más recientes (por ejemplo, Francia) cuando se tengan fecha, lugar y nombre confirmados. -->
+    </ul>
+  </div>
+</section>
+
+<section id="obra">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Obra</div>
+      <h2>Series y obras destacadas</h2>
+    </div>
+    <!-- Para mostrar fotos reales, cambiar cada <div class="frame fN"></div> por
+         <div class="frame"><img src="img/nombre.jpg" alt="Título de la obra"></div> -->
+    <div class="gallery">
+      <article class="work reveal">
+        <div class="frame f1"></div>
+        <div class="info">
+          <div class="meta">Serie · 2021</div>
+          <h3>Visiones</h3>
+          <p>Paisajes del desierto sonorense, cactus cargados de energía y recuerdos íntimos pintados al pastel.</p>
+        </div>
+      </article>
+      <article class="work reveal">
+        <div class="frame f2"></div>
+        <div class="info">
+          <div class="meta">Serie · 2022–2023</div>
+          <h3>Sin límites</h3>
+          <p>El poder del amor, el pensamiento, las emociones y el ego: «el poder infinito e ilimitado con el que fuimos creados».</p>
+        </div>
+      </article>
+      <article class="work reveal">
+        <div class="frame f3"></div>
+        <div class="info">
+          <div class="meta">Obra · 2022</div>
+          <h3>Bendita coherencia</h3>
+          <p>Presentada en Venecia en el homenaje a Leonora Carrington al cierre de la 59.ª Bienal.</p>
+        </div>
+      </article>
+      <article class="work reveal">
+        <div class="frame f4"></div>
+        <div class="info">
+          <div class="meta">NFT · 2022</div>
+          <h3>Multiverse</h3>
+          <p>Obra digital proyectada en Times Square, Nueva York, durante los NFT Awards.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Sección pendiente: «Retratos y encargos» con las obras pintadas para personalidades.
+     Añadirla cuando se tengan fotos de las obras y permiso de las personas retratadas. -->
+
+<section id="surrealismo">
+  <div class="wrap reveal">
+    <div class="eyebrow">Su lugar en el surrealismo</div>
+    <h2>Una heredera contemporánea</h2>
+    <blockquote>
+      «Me desnudo totalmente el alma, pues la intención es mostrar quién soy yo por medio de mis pinturas.»
+      <cite>Martha Sáenz</cite>
+    </blockquote>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Un legado mexicano</h3>
+        <p>En 1938 André Breton llamó a México «el país surrealista por excelencia». La obra de Martha Sáenz continúa esa estirpe, junto a Frida Kahlo, Remedios Varo y Leonora Carrington.</p>
+      </div>
+      <div class="pillar">
+        <h3>La mujer como creadora</h3>
+        <p>Los pioneros del movimiento relegaban a menudo a la mujer al papel de musa. Martha Sáenz no es una figura imaginada por otro: es el sujeto soberano de su propia creación.</p>
+      </div>
+      <div class="pillar">
+        <h3>Arte que sana</h3>
+        <p>Lejos del psicoanálisis freudiano clásico, su propuesta se centra en el amor propio, el autoconocimiento y la sanación: transforma miedos, traumas y ego en formas y colores.</p>
+      </div>
+      <div class="pillar">
+        <h3>Un puente global</h3>
+        <p>De Sonora a Venecia, Dubái y Nueva York, su obra demuestra que el surrealismo, nacido con el manifiesto de 1924, sigue siendo una filosofía viva en el siglo XXI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prensa">
+  <div class="wrap reveal">
+    <div class="eyebrow">Prensa</div>
+    <h2>Lo que se ha dicho</h2>
+    <ul class="press">
+      <li><a href="https://amp.milenio.com/cultura/visiones-el-mundo-surrealista-de-martha-saenz" target="_blank" rel="noopener">«Visiones», el mundo surrealista de Martha Sáenz <span class="src">Milenio</span></a></li>
+      <li><a href="https://www.elfinanciero.com.mx/culturas/2022/01/22/visiones-de-la-artista-martha-saenz-llega-al-pabellon-de-colombia-en-la-expo-dubai/" target="_blank" rel="noopener">«Visiones» llega al Pabellón de Colombia en la Expo Dubái <span class="src">El Financiero</span></a></li>
+      <li><a href="https://www.elfinanciero.com.mx/culturas/2022/06/24/el-nft-multiverse-de-la-artista-mexicana-martha-saenz-se-exhibio-en-time-square-ny/" target="_blank" rel="noopener">El NFT «Multiverse» se exhibió en Times Square <span class="src">El Financiero</span></a></li>
+      <li><a href="https://www.moncloa.com/2023/02/09/la-exposicion-de-martha-saenz-enmarcada-en-la-exposicion-dedicada-a-la-artista-del-surrealismo-leonora-carrington-1843442" target="_blank" rel="noopener">Su exposición, enmarcada en el homenaje a Leonora Carrington <span class="src">Moncloa</span></a></li>
+      <li><a href="https://forbes.com.mx/?p=1131327" target="_blank" rel="noopener">«Sin límites» en el Museo Leonora Carrington <span class="src">Forbes México</span></a></li>
+      <li><a href="https://www.publimetro.com.mx/plus/2023/09/25/exposicion-sin-limites-de-artista-martha-saenz-en-museo-leonora-carrington" target="_blank" rel="noopener">Exposición «Sin límites» en San Luis Potosí <span class="src">Publimetro</span></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer id="contacto">
+  <div class="eyebrow">Contacto</div>
+  <h2 style="margin-bottom:0">Sigue su obra</h2>
+  <div class="links">
+    <a href="https://www.instagram.com/marthasaenzd/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://mobile.twitter.com/marthasnz" target="_blank" rel="noopener">X / Twitter</a>
+    <a href="https://linktr.ee/marthasaenz" target="_blank" rel="noopener">Linktree</a>
+  </div>
+  <small>© Martha Sáenz. Todas las obras son propiedad de la artista.</small>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
