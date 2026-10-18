@@ -88,10 +88,19 @@
   .work .info { padding: 20px 22px 24px; }
   .work .meta { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
   .work p { color: var(--sand-dim); font-size: 15px; margin-top: 8px; }
-  .f1 { background: radial-gradient(circle at 30% 30%, var(--gold), transparent 35%), linear-gradient(135deg, #6b2f2a, #2a1b33); }
-  .f2 { background: radial-gradient(circle at 70% 60%, var(--cactus), transparent 40%), linear-gradient(200deg, #c8603a, #3a2640); }
-  .f3 { background: conic-gradient(from 90deg at 50% 50%, #2a1b33, #c8603a, #d9a441, #5f8a5b, #2a1b33); }
-  .f4 { background: radial-gradient(circle at 50% 50%, #7c5cc4, transparent 45%), linear-gradient(160deg, #14101c, #3a2640); }
+
+  .art-grid { columns: 3 260px; column-gap: 20px; }
+  .art-grid img { width: 100%; margin-bottom: 20px; break-inside: avoid; cursor: zoom-in; border: 1px solid var(--line);
+                  transition: transform .4s ease; }
+  .art-grid img:hover { transform: scale(1.015); }
+  .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .strip img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+  @media (max-width: 700px) { .strip { grid-template-columns: 1fr; } }
+  .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,8,14,.94); display: none; place-items: center;
+              padding: 24px; cursor: zoom-out; }
+  .lightbox.open { display: grid; }
+  .lightbox img { max-height: 84vh; max-width: 100%; object-fit: contain; }
+  .lightbox p { margin-top: 14px; text-align: center; color: var(--sand-dim); font-size: 14px; }
 
   /* Ensayo */
   .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 20px; }
@@ -159,8 +168,7 @@
       <p>Su obra es autorreferencial: los paisajes desérticos de su tierra, los cactus que para ella son fuente de energía y los recuerdos de sus viajes, como el que hizo con sus hijos al desierto del Sahara, se convierten en símbolos y colores. Trabaja sobre todo con pastel y técnica mixta, y ha extendido su lenguaje a la escultura en bronce y al arte digital.</p>
       <p>La crítica la ha llamado <em>«heredera del surrealismo»</em>, en la estela de Leonora Carrington, Remedios Varo, Giorgio de Chirico y Salvador Dalí.</p>
     </div>
-    <!-- Sustituir por una foto de la artista: <img src="img/martha.jpg" alt="Martha Sáenz en su estudio"> -->
-    <div class="portrait">Fotografía de la artista<br>(colocar en <code>img/martha.jpg</code>)</div>
+    <div class="portrait"><img src="img/martha-retrato.jpg" alt="Retrato en blanco y negro de Martha Sáenz" loading="lazy"></div>
   </div>
 </section>
 
@@ -210,11 +218,8 @@
       <div class="eyebrow">Obra</div>
       <h2>Series y obras destacadas</h2>
     </div>
-    <!-- Para mostrar fotos reales, cambiar cada <div class="frame fN"></div> por
-         <div class="frame"><img src="img/nombre.jpg" alt="Título de la obra"></div> -->
     <div class="gallery">
       <article class="work reveal">
-        <div class="frame f1"></div>
         <div class="info">
           <div class="meta">Serie · 2021</div>
           <h3>Visiones</h3>
@@ -222,7 +227,6 @@
         </div>
       </article>
       <article class="work reveal">
-        <div class="frame f2"></div>
         <div class="info">
           <div class="meta">Serie · 2022–2023</div>
           <h3>Sin límites</h3>
@@ -230,7 +234,6 @@
         </div>
       </article>
       <article class="work reveal">
-        <div class="frame f3"></div>
         <div class="info">
           <div class="meta">Obra · 2022</div>
           <h3>Bendita coherencia</h3>
@@ -238,13 +241,44 @@
         </div>
       </article>
       <article class="work reveal">
-        <div class="frame f4"></div>
         <div class="info">
           <div class="meta">NFT · 2022</div>
           <h3>Multiverse</h3>
           <p>Un viaje espiritual con ajolotes, un sapo de Sonora y miles de estrellas, proyectado en el Nasdaq Billboard de Times Square durante los NFT Awards.</p>
         </div>
       </article>
+    </div>
+
+    <h3 class="reveal" style="margin:72px 0 24px">Galería</h3>
+    <!-- Añadir títulos: data-caption="Título · técnica · año" -->
+    <div class="art-grid">
+      <img src="img/obra-01.jpg" alt="Mujer sostiene un corazón con un ojo entre nubes rosas, mariposas y un ajolote" loading="lazy">
+      <img src="img/obra-02.jpg" alt="Cielo de ojos sobre un teatro con cortinas verdes y una figura que flota" loading="lazy">
+      <img src="img/obra-03.jpg" alt="Corazón con un ojo sostenido por manos, con mariposas monarca y un quetzal" loading="lazy">
+      <img src="img/obra-04.jpg" alt="Hombre de traje con un espejo por rostro y un globo terráqueo en forma de corazón" loading="lazy">
+      <img src="img/obra-05.jpg" alt="Retrato de un hombre con gorguera bajo un telón de ojos" loading="lazy">
+      <img src="img/obra-06.jpg" alt="Mujer de vestido rojo frente a un ojo gigante" loading="lazy">
+      <img src="img/obra-07.jpg" alt="Retrato de mujer con turbante negro y un pájaro" loading="lazy">
+      <img src="img/obra-08.jpg" alt="Círculo de ojos que giran como un mandala" loading="lazy">
+      <img src="img/obra-09.jpg" alt="Mirada de mujer entre nopales" loading="lazy">
+      <img src="img/obra-10.jpg" alt="Corazón con un ojo del que brotan flores, junto al mar y un saguaro" loading="lazy">
+      <img src="img/obra-11.jpg" alt="Ojo amarillo rodeado de un plumaje rojo y anaranjado" loading="lazy">
+      <img src="img/escultura-01.jpg" alt="Escultura de un ajolote" loading="lazy" data-caption="Escultura">
+      <img src="img/escultura-02.jpg" alt="Escultura en bronce de un corazón con un ojo y ramas" loading="lazy" data-caption="Escultura en bronce">
+    </div>
+  </div>
+</section>
+
+<section id="taller">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">En el taller</div>
+      <h2>«Cada vez que veo un papel, tengo la oportunidad de desnudar mi alma otra vez»</h2>
+    </div>
+    <div class="strip">
+      <img src="img/martha-pintando.jpg" alt="Martha Sáenz pintando al aire libre" loading="lazy">
+      <img src="img/martha-estudio.jpg" alt="Martha Sáenz en su estudio entre pasteles" loading="lazy">
+      <img src="img/martha-ego.jpg" alt="Martha Sáenz junto a una obra con la palabra EGO" loading="lazy">
     </div>
   </div>
 </section>
@@ -348,7 +382,19 @@
   <small>© Martha Sáenz. Todas las obras son propiedad de la artista.</small>
 </footer>
 
+<div class="lightbox" role="dialog" aria-modal="true"><figure><img alt=""><p></p></figure></div>
+
 <script>
+  const lb = document.querySelector('.lightbox');
+  document.querySelectorAll('.art-grid img').forEach(img => img.addEventListener('click', () => {
+    lb.querySelector('img').src = img.src;
+    lb.querySelector('img').alt = img.alt;
+    lb.querySelector('p').textContent = img.dataset.caption || img.alt;
+    lb.classList.add('open');
+  }));
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
