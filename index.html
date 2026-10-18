@@ -164,7 +164,8 @@
   .featured .words { list-style: none; display: grid; gap: 10px; margin: 26px 0; font: italic 400 22px/1.35 var(--serif); }
   .featured .words li::before { content: "— "; color: var(--terracotta); }
 
-  .stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+  .stories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 40px; }
+  @media (max-width: 760px) { .stories { grid-template-columns: 1fr; } }
   .story .pics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
   .story .pics.one { grid-template-columns: 1fr; }
   .story .pics img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 1px solid var(--line); }
@@ -470,6 +471,12 @@
         <div class="meta">Pastel sobre papel · 2020</div>
         <h3>«Saboreando el mundo»</h3>
         <p>«Todo es posible cuando uso mi imaginación… Voy a seguir saboreando el mundo.» Una versión de la obra se expuso en el Pabellón de Colombia de la Expo Dubái en 2022.</p>
+      </article>
+      <article class="story reveal">
+        <div class="pics one"><img src="img/postales-expo-dubai.jpg" alt="Postales con obras de Martha Sáenz editadas para el Pabellón de Colombia en la Expo Dubái" loading="lazy"></div>
+        <div class="meta">Expo Dubái · enero de 2022</div>
+        <h3>Postales del Pabellón de Colombia</h3>
+        <p>Postales con sus obras, editadas con su nombre para su exposición en el Pabellón de Colombia de la Expo 2020 Dubái.</p>
       </article>
       <article class="story reveal">
         <div class="pics one"><img src="img/conejo-2024.jpg" alt="Conejo blanco en una ventana nocturna, rodeado de corazones azules y un ojo, pastel de 2024" loading="lazy"></div>
